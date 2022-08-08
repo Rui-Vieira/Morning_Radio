@@ -37,7 +37,6 @@ public class MorningRadio {
 
     private void openingSong(Weekday weekday) {
         isShowOn = true;
-        songsPlayed++;
 
         switch (weekday) {
             case MONDAY -> System.out.println("“Manic Monday”—The Bangles");
@@ -59,16 +58,17 @@ public class MorningRadio {
             System.out.println("Reach the maximum songs");
             return;
         }
-        if (songsPlayed % 2 == 0) {
+        if ((songsPlayed % 2 == 0)+1) {
             playCommercial();
         }
         songsPlayed++;
+
         if (activeHostType == HostType.MUSIC_LOVER) {
             System.out.println("Next Song:");
             song();
         }
         if (activeHostType == HostType.TALKER) {
-            System.out.println("Alright, is being a good talk, but now is time to the next song");
+            System.out.println("Alright, is being a good talk, but now is time to the next song:");
             song();
         }
     }
@@ -78,35 +78,35 @@ public class MorningRadio {
 
         switch (playingList) {
             case 1:
-                System.out.println("“Sunday”—Iggy Pop");
+                System.out.println("“Sunday”—Iggy Pop\n");
                 break;
             case 2:
-                System.out.println("“Saturday Night”—Kaiser Chiefs");
+                System.out.println("“Saturday Night”—Kaiser Chiefs\n");
                 break;
             case 3:
-                System.out.println("“Long Monday”—John Prine");
+                System.out.println("“Long Monday”—John Prine\n");
                 break;
             case 4:
-                System.out.println("“One Million Billionth of a Millisecond on a Sunday Morning”—The Flaming Lips");
+                System.out.println("“One Million Billionth of a Millisecond on a Sunday Morning”—The Flaming Lips\n");
                 break;
             case 5:
-                System.out.println("“Oh, Sunday Night”—Carrie Underwood");
+                System.out.println("“Oh, Sunday Night”—Carrie Underwood\n");
                 break;
             case 6:
-                System.out.println("“Friday”—Rebecca Black");
+                System.out.println("“Friday”—Rebecca Black\n");
                 break;
             default:
-                System.out.println("Sound of Silence- Disturbed");
+                System.out.println("'Sound of Silence- Disturbed'\n");
         }
     }
 
     private void playCommercial() {
-        System.out.println("You need a break!? Take a KitKat or smoke something!");
+        System.out.println("Tired!? Your dog doesnt love you!?? You need a break!? Take a KitKat or smoke something!\n");
     }
-
     public void endRadioShow() {
         isShowOn = false;
         songsPlayed = 0;
         activeHostType = null;
+        System.out.println("Folks is time to close the show!");
     }
 }
